@@ -96,4 +96,5 @@ public class Canvas extends Fragment {
         canvasBackgroundColor = paintCanvas.changeBackground(color);
     }
 
+
 }

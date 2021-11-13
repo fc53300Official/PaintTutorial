@@ -97,6 +97,7 @@ public class PaintCanvas extends View implements View.OnTouchListener{
         Random r = new Random();
         backGroundColor = Color.rgb(r.nextInt(256), r.nextInt(256), r.nextInt(256));
         setBackgroundColor(backGroundColor);
+        
     }
 
     public int changeBackground(int color){
