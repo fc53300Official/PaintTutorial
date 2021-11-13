@@ -7,9 +7,11 @@
     android:background="@color/teal_200">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Palette" />
 
+    <Button
+        android:text="Stroke Color"
+        android:id="@+id/strokeColor_palette"
+        android:layout_width="219dp"
+        android:layout_height="91dp"
+        android:layout_gravity="center_vertical|center_horizontal"/>
 </FrameLayout>
