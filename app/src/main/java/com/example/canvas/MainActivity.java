@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private SensorManager sensorManager;
     private Sensor lightSensor;
     private Sensor accSensor;
-    private static final int THRESHOLD = 3000;
+    private static final int THRESHOLD = 800;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -186,6 +186,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 float speed = Math.abs(x + y + z - lastX - lastY - lastZ) / diffTime * 10000;
                 if(speed > THRESHOLD){
                     canvasFragment.clear();
+                    canvasFragment.changeBackgroundColor(0);
                 }
                 Log.d("speed", String.valueOf(speed));
                 lastX = x;

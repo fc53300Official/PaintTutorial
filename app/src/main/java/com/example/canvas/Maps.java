@@ -70,7 +70,10 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback {
                     currentLocation = new LatLng(currentLocationLoc.getLatitude(), currentLocationLoc.getLongitude());
 
                     map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 30));
-                    map.addPolyline(new PolylineOptions().add(lastLocation, currentLocation));
+                    if(onDraw){
+                        map.addPolyline(new PolylineOptions().add(lastLocation, currentLocation));
+                    }
+
 
                 }
             }
@@ -87,18 +90,13 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback {
             public void onClick(View v) {
                 if(onDraw) {
                     onDraw = false;
-                    draw.setText("Stop draw");
+                    draw.setText("Start draw");
                 }else {
                     onDraw = true;
-                    draw.setText("Start draw");
+                    draw.setText("Stop draw");
 
                 }
-                // Perform action on click
-                //Intent activityChangeIntent = new Intent(PresentActivity.this, NextActivity.class);
 
-                // currentContext.startActivity(activityChangeIntent);
-
-                //PresentActivity.this.startActivity(activityChangeIntent);
             }
         });
         getLocation();
@@ -214,7 +212,7 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback {
     }
 
 
-    private void enableMyLocation() {
+    /**private void enableMyLocation() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             if (map != null) {
@@ -225,7 +223,7 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback {
             //PermissionUtils.requestPermission(this, LOCATION_PERMISSION_REQUEST_CODE,
               //      Manifest.permission.ACCESS_FINE_LOCATION, true);
         }
-    }
+    }**/
 
 
     private void startLocationUpdateFused() {

@@ -38,6 +38,7 @@ public class Canvas extends Fragment {
         //Intent intent = getActivity().getIntent();
 
         GestureListener mGestureListener = new GestureListener();
+        mGestureListener.setFragment(this);
         GestureDetector mGestureDetector = new GestureDetector(getActivity().getApplicationContext(), mGestureListener);
         mGestureDetector.setIsLongpressEnabled(true);
         mGestureDetector.setOnDoubleTapListener(mGestureListener);
