@@ -8,10 +8,10 @@
 
     <TextView
         android:id="@+id/group"
-        android:layout_width="209dp"
-        android:layout_height="86dp"
+        android:layout_width="398dp"
+        android:layout_height="358dp"
         android:layout_marginTop="50dp"
-        android:text="João Mendes fc53300"
+        android:text="grupo 02 \n Caio Martins - 47651\n João Mendes - 53300\n Jose Ferreira -53311"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aboutLabel" />

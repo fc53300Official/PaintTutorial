@@ -25,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void openMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Maps.class);
         startActivity(intent);
 
     }

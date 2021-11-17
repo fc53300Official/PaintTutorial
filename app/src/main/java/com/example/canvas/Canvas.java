@@ -12,20 +12,11 @@ import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Canvas#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Canvas extends Fragment {
-
-
-    private String mParam1;
-    private String mParam2;
-
     public Canvas() {
         // Required empty public constructor
     }
@@ -94,6 +85,14 @@ public class Canvas extends Fragment {
 
     public void changeBackgroundColor(int color){
         canvasBackgroundColor = paintCanvas.changeBackground(color);
+    }
+
+    public void clear(){paintCanvas.erase();}
+
+    public void changeCanvasBrightness(int brightness ){
+        WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
+        lp.screenBrightness = brightness == 0? -1/100.0f : brightness/100.0f;
+        getActivity().getWindow().setAttributes(lp);
     }
 
 
